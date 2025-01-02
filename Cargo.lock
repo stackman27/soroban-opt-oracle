@@ -6,6 +6,7 @@ version = 4
 name = "VoteOracle"
 version = "0.1.0"
 dependencies = [
+ "shared",
  "soroban-sdk",
 ]
 
@@ -809,6 +810,7 @@ checksum = "1261fe7e33c73b354eab43b1273a57c8f967d0391e80353e51f764ac02cf6775"
 name = "onchain-oracle"
 version = "0.0.0"
 dependencies = [
+ "shared",
  "soroban-sdk",
 ]
 
@@ -1047,6 +1049,13 @@ checksum = "75872d278a8f37ef87fa0ddbda7802605cb18344497949862c0d4dcb291eba60"
 dependencies = [
  "digest",
  "keccak",
+]
+
+[[package]]
+name = "shared"
+version = "0.1.0"
+dependencies = [
+ "soroban-sdk",
 ]
 
 [[package]]

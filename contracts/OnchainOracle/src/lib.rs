@@ -1,27 +1,10 @@
 #![no_std]
 
 use soroban_sdk::{contract, contractimpl, contracttype, log, symbol_short, Env, IntoVal, Map, String, Symbol, TryFromVal, Val, Vec};
+use shared::{ClaimStatus, AssertedData};
 
 const CLAIM_KEY: Symbol = symbol_short!("CLAIM");
 const CLAIM_ID: Symbol = symbol_short!("CLAIMID");
-
-#[contracttype]
-#[derive(Debug, Clone, PartialEq)]
-pub enum ClaimStatus {
-    PROPOSED,
-    DISPUTED,
-    SUCCESS, 
-    FAILED,
-}
- 
-#[contracttype]
-#[derive(Debug, Clone, PartialEq)]
-struct AssertedData { 
-    pub claim_id: u64, 
-    pub claim: String,
-    pub challenge_period: u64,
-    pub claim_status: ClaimStatus,
-}
 
 #[contract]
 pub struct OnchainOracle; 
